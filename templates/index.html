@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive mobile price prediction website  </title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+ 
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'main.css') }}">
+    
+   
+</head>
+
+<body>
+
+<!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo"><i class="fa-solid fa-mobile-screen-button"></i>Mobile Price Prediction</a>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#howitworks">how it works</a>
+        <a href="#contact">contact</a>
+     
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>Ever wanted how mobile price range is decided ? </h3>
+        <p>Find about your mobile price range or just see based on your inputs, which range it will fall to! Click the button below and input the required specifications for the mobile phone!!</p>
+        <a href="#howitworks" class="btn">Predict Price Range!</a>
+    </div>
+
+    <div class="image">
+        
+         <img src="{{ url_for('static', filename= 'images/phones.png') }}">
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- speciality section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> About <span>this Website</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+       <p style="color: #fff;">This website is about predicting price range of a mobile phones. This price range has 4 categories. 
+       0 means LOW COST , 1 means MEDIUM COST , 2 means HIGH COST, 3 means VERY HIGH COST. This price range category is determined by whatever inputs you give. And it will tell you which category number it should fall to. Moreover, the model used in this prediction is the SVM model that had a higher accuracy in my project!</p>
+
+    </div>
+
+</section>
+
+
+
+<div class="step-container">
+
+    <h1 class="heading">how it <span>works</span></h1>
+
+    <section class="steps">
+
+        <div class="box">
+           <img src="{{ url_for('static', filename= 'images/step1.jpeg') }}">
+            <h3>Get ready your mobile specs</h3>
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename= 'images/step2.jpeg') }}">
+            <h3>Input whatever the form wants</h3>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename= 'images/step3.jpeg') }}">
+            <h3>Free and Fast Result Given</h3>
+        </div>
+        <div class="box">
+           <img src="{{ url_for('static', filename= 'images/step4.jpeg') }}">
+            <h3>and finally,range given to you!</h3>
+        </div>
+        
+    </section>
+
+</div>
+
+
+
+<section class="order" id="howitworks">
+
+    <h1 class="heading"> <span>Predict</span> now </h1>
+    <h2>All you have to input your variables and we will tell you the info LOL</h2>
+    <div class="row">
+
+       <form action="/predict" method="post">
+
+            <div class="inputBox">
+                <input type="number" placeholder="total battery energy stored @ one time " name="battery_power">
+                <input type="number" placeholder="No. of Front Camera mega pixels"name="fc">
+            </div>
+
+            <div class="inputBox">
+                <input type="number" placeholder="Internal Memory in GB" name="int_memory">
+                <input type="number" placeholder="touch screen have or no - answer by 1 or 0 " name="touch_screen">
+            </div>
+            <div class="inputBox">
+                <input type="float" placeholder="Mobile depth in cm " name="m_dep">
+                <input type="number" placeholder="Weight of mobile phone"name="mobile_wt">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="Number of cores of processor" name="n_cores">
+                <input type="number" placeholder="No. of Primary Camera mega pixels"name="pc">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="pixel resolution height" name="px_height">
+                <input type="number" placeholder="pixel resolution width"name="px_width">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="Ram in MB" name="ram">
+                <input type="number" placeholder="Screen Height of mobile in cm"name="sc_h">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="Screen Width of mobile in cm" name="sc_w">
+                <input type="number" placeholder="longest time that a single battery charge will last when you are using"name="talk_time">
+            </div>
+
+                <input type="submit" value="predict now" class="btn">
+                <h1> Price range falls in Category {{ mp }}</h1>
+        </form>
+        <p>{{ mp }}</p>
+    </div>
+
+</section>
+
+<!-- order section ends -->
+
+<!-- footer section  -->
+
+<section class="footer">
+
+    <div class="share">
+        <a href="#" class="btn">Go Up</a>
+    </div>
+
+
+</section>
+
+<!-- scroll top button  -->
+<a href="#home" class="fas fa-angle-up" id="scroll-top"></a>
+
+
+
+</body>
+</html>
