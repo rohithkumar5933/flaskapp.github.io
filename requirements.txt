@@ -4,6 +4,7 @@ contourpy
 cycler
 Flask
 fonttools
+gunicorn
 importlib-resources
 itsdangerous
 Jinja2
