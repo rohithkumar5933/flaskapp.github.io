@@ -33,7 +33,7 @@ def predict():
         prediction[0]=0
     if prediction[0]>3:
         prediction[0]=3
-    return render_template('index.html', mp =f"{text_map[prediction[0]]}")
+    return render_template('result.html', prediction =f"{text_map[prediction[0]]}")
 
 if __name__ == '__main__':
     app.run(debug=False)
