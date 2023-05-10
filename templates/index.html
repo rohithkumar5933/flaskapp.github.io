@@ -113,39 +113,39 @@
        <form action="/predict" method="post">
 
             <div class="inputBox">
-                <input type="number" placeholder="total battery energy stored @ one time " name="battery_power">
-                <input type="number" placeholder="No. of Front Camera mega pixels"name="fc">
+                <input type="number" placeholder="total battery energy stored @ one time " name="battery_power" min="1000" max="7000" required>
+                <input type="number" placeholder="No. of Front Camera mega pixels"name="fc" min="1" max="32" required>
             </div>
 
             <div class="inputBox">
-                <input type="number" placeholder="Internal Memory in GB" name="int_memory">
-                <input type="number" placeholder="touch screen have or no - answer by 1 or 0 " name="touch_screen">
+                <input type="number" placeholder="Internal Memory in GB" name="int_memory" min="8" max="256" required>
+                <input type="number" placeholder="touch screen have or no - answer by 1 or 0 " name="touch_screen" min="0" max="1" required>
             </div>
             <div class="inputBox">
-                <input type="float" placeholder="Mobile depth in cm " name="m_dep">
-                <input type="number" placeholder="Weight of mobile phone"name="mobile_wt">
+                <input type="number" placeholder="Mobile depth in cm " name="m_dep" min="5" max="15" required>
+                <input type="number" placeholder="Weight of mobile phone"name="mobile_wt" min="100" max="220" required>
             </div>
             <div class="inputBox">
-                <input type="number" placeholder="Number of cores of processor" name="n_cores">
-                <input type="number" placeholder="No. of Primary Camera mega pixels"name="pc">
+                <input type="number" placeholder="Number of cores of processor" name="n_cores" min="1" max="10" required>
+                <input type="number" placeholder="No. of Primary Camera mega pixels"name="pc" min="8" max="128" required>
             </div>
             <div class="inputBox">
-                <input type="number" placeholder="pixel resolution height" name="px_height">
-                <input type="number" placeholder="pixel resolution width"name="px_width">
+                <input type="number" placeholder="pixel resolution height" name="px_height" min="720" max="1440" required>
+                <input type="number" placeholder="pixel resolution width"name="px_width" min="480" max="1440" required>
             </div>
             <div class="inputBox">
-                <input type="number" placeholder="Ram in MB" name="ram">
-                <input type="number" placeholder="Screen Height of mobile in cm"name="sc_h">
+                <input type="number" placeholder="Ram in GB" name="ram" min="1" max="16" required>
+                <input type="number" placeholder="Screen Height of mobile in cm"name="sc_h" min="3" max="7" required>
             </div>
             <div class="inputBox">
-                <input type="number" placeholder="Screen Width of mobile in cm" name="sc_w">
-                <input type="number" placeholder="longest time that a single battery charge will last when you are using"name="talk_time">
+                <input type="number" placeholder="Screen Width of mobile in cm" name="sc_w" min="4" max="8" required>
+                <input type="number" placeholder="longest time that a single battery charge will last when you are using"name="talk_time" min="6" max="18" required>
             </div>
 
                 <input type="submit" value="predict now" class="btn">
-                <h1> Price range falls in Category {{ mp }}</h1>
+                
         </form>
-        <p>{{ mp }}</p>
+        
     </div>
 
 </section>
