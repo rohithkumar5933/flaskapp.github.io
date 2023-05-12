@@ -31,7 +31,7 @@ def predict():
         "4": "> 1,00,000"
     }
 	# Format prediction text for display in "index.html"
-    return render_template('result.html', prediction ='Moblile price range should be {}'.format(data.get(str(prediction[0]),"10,00-1,00,000")))
+    return render_template('result.html', prediction ='Mobile price category should be {} price range should be {}'.format(prediction[0],data.get(str(prediction[0]),"10,00-1,00,000")))
 
 if __name__ == '__main__':
     app.run(debug=False)
